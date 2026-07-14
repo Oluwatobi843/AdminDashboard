@@ -3,6 +3,9 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useStateContext } from "../contexts/ContextProvider";
+import { BsChatLeft } from "react-icons/bs";
+import { RiNotification3Line } from "react-icons/ri";
+import avatar from "../data/avatar.jpg";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -42,6 +45,32 @@ const Navbar = () => {
           color="blue"
           icon={<FiShoppingCart />}
         />
+
+        <NavButton
+          title="Chat"
+          dotColor="#03C9D7" 
+          customFunc={() => handleClick("chat")}
+          color="blue"
+          icon={<BsChatLeft />}
+        />
+
+        <NavButton
+          title="Notification"
+          dotColor="#03C9D7" 
+          customFunc={() => handleClick("notification")}
+          color="blue"
+          icon={<RiNotification3Line/>}
+        />
+
+        <TooltipComponent
+          content="Profile" position="BottomCenter">
+
+            <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg" 
+            onClick={() => handleClick("userProfile")}>
+              <img src={avatar} alt="user-profile" className="rounded-full w-8 h-8" />
+                <p><span className="font-semibold">John Doe</span></p>
+            </div>
+        </TooltipComponent>
       </div>
     </div>
   );
