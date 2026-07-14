@@ -6,6 +6,11 @@ import { useStateContext } from "../contexts/ContextProvider";
 import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
 import avatar from "../data/avatar.jpg";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import Cart from "./Cart";
+import Chat from "./Chat";
+import Notification from "./Notification";
+import UserProfile from "./UserProfile";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -27,7 +32,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { setActiveMenu, handleClick } = useStateContext();
+  const { setActiveMenu, handleClick , isClicked, setIsClicked } = useStateContext();
 
   return (
     <div className="flex justify-between p-2 md:mx-2 relative">
@@ -68,9 +73,20 @@ const Navbar = () => {
             <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg" 
             onClick={() => handleClick("userProfile")}>
               <img src={avatar} alt="user-profile" className="rounded-full w-8 h-8" />
-                <p><span className="font-semibold">John Doe</span></p>
+                <p>
+                  <span className="text-gray-400 text-14">Hi,</span>{""}
+                  <span className="text-gray-400 font-bold ml-1 text-14">Michael</span>
+                </p>
+
+                <MdKeyboardArrowDown className="text-gray-400 text-14" />
             </div>
         </TooltipComponent>
+
+        {isClicked.cart && <Cart />}
+        {isClicked.chat && <Chat />}
+        {isClicked.notification && <Notification />}
+        {isClicked.userProfile && <UserProfile />}
+
       </div>
     </div>
   );
