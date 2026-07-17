@@ -1,6 +1,6 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { GoPrimitiveDot } from "react-icons/go";
+import { GoDotFill } from "react-icons/go";
 import { Stacked, Pie, Button, LineChart } from "../components";
 import {
   earningData,
@@ -42,9 +42,33 @@ const Ecommerce = () => {
               <button
                 type="button"
                 style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-              ></button>
+                className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
+              >
+                {item.icon}
+              </button>
+              <p className="mt-3">
+                <span className="text-lg font-semibold">{item.amount}</span>
+                <span className={`text-sm  ml-2 text-${item.pcColor}`}>
+                  {item.percentage}
+                </span>
+              </p>
+              <p className="text-sm text-gray-400 mt-1">{item.title}</p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="flex gap-10 flex-wrap justify-center ">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780 ">
+          <div className="flex justify-between">
+            <p className="font-semibold text-xl">Revenue Updates</p>
+            <div className="flex items-center gap-4">
+              <p>
+                <span>
+                  <GoDotFill />
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
