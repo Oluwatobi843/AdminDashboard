@@ -1,7 +1,7 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
-import { Stacked, Pie, Button, LineChart } from "../components";
+import { Stacked, Pie, Button, LineChart, SparkLine } from "../components";
 import {
   earningData,
   SparklineAreaData,
@@ -85,6 +85,25 @@ const Ecommerce = () => {
                     23%
                   </span>
                 </p>
+                <p className="text-gray-500 mt-1">Budget</p>
+              </div>
+
+              <div className="mt-8">
+                <p>
+                  <span className="text-3xl  font-semibold">$48,483</span>
+                </p>
+                <p className="text-gray-500 mt-1">Expense</p>
+              </div>
+              <div className="mt-5">
+                <SparkLine
+                  currentColor="blue"
+                  id="line-sparkline"
+                  type="Line"
+                  height="80px"
+                  width="250px"
+                  data={SparklineAreaData}
+                  color="blue"
+                />
               </div>
             </div>
           </div>
