@@ -16,6 +16,8 @@ const SparkLine = ({ id, height, width, color, data, type }) => {
       fill={color}
       border={{ color, width: 2 }}
       dataSource={data}
+      xName="x"
+      yName="y"
       type={type}
     >
       <Inject services={[SparklineTooltip]} />
