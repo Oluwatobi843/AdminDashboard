@@ -4,7 +4,7 @@ export { default as Employees } from './Employees';
 export { default as Customers } from './Customers';
 export { default as Kanban } from './Kanban';
 export { default as Editor } from './Editor';
-export { default as Calendar } from './Calender';
+export { default as Calendar } from './Calendar';
 export { default as ColorPicker } from './ColorPicker';
 export { default as ColorMapping } from './Charts/ColorMapping';
 export { default as Area } from './Charts/Area';
