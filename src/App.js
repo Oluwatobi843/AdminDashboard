@@ -61,6 +61,9 @@ const App = () => {
               <Navbar />
             </div>
 
+              
+            <ThemeSettings />
+
             <div>
               <Routes>
                 {/* Dashboard Routes */}
