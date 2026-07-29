@@ -39,7 +39,7 @@ const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useSt
                   value='Light'
                   className='cursor-pointer'
                   onChange={setMode}
-                  checked={true}
+                  checked={currentMode === 'Light'}
                      
                   />
 
@@ -55,8 +55,8 @@ const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useSt
                   name='theme'
                   value='Dark'
                   className='cursor-pointer'
-                  onChange={() => {}}
-                  checked={true}
+                  onChange={setMode}
+                  checked={currentMode === 'Dark'}
                      
                   />
 
@@ -73,8 +73,8 @@ const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useSt
                 {themeColors.map((item, index) => (
                   <TooltipComponent key={index} content={item.name} position='TopCenter'>
                       <div className='relative mt-2 cursor-pointer flex gap-5 items-center'>
-                          <button type='button' className='h-10 w-10 rounded-full cursor-pointer' style={{ backgroundColor: item.color}} onClick={() => {} }>
-                             <BsCheck className={`ml-2 text-2xl text-white ${item === false ? 'block' : 'hidden'}`} />
+                          <button type='button' className='h-10 w-10 rounded-full cursor-pointer' style={{ backgroundColor: item.color}} onClick={() => setColor(item.color) }>
+                             <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block' : 'hidden'}`} />
                           </button>
                       </div>
                   </TooltipComponent> 
