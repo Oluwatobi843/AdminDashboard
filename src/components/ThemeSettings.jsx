@@ -7,6 +7,10 @@ import { themeColors } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const  ThemeSettings = () => {
+
+const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext( )
+
+
   return (
     <div className='bg-half-transparent w-screen fixed nav-item top-0 right-0'>
         <div className='float-right h-screen dark:text-gray-200 bg-white dark:[#458B52] w-400 '>
@@ -15,7 +19,7 @@ const  ThemeSettings = () => {
 
               <button 
                type='button'
-               onClick={() => {}}
+               onClick={() => setThemeSettings(false)}
                style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%' }}
                className='text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray' 
               >
@@ -34,7 +38,7 @@ const  ThemeSettings = () => {
                   name='theme'
                   value='Light'
                   className='cursor-pointer'
-                  onChange={() => {}}
+                  onChange={setMode}
                   checked={true}
                      
                   />
@@ -69,8 +73,8 @@ const  ThemeSettings = () => {
                 {themeColors.map((item, index) => (
                   <TooltipComponent key={index} content={item.name} position='TopCenter'>
                       <div className='relative mt-2 cursor-pointer flex gap-5 items-center'>
-                          <button type='button' className='h-10 w-10' style={{ backgroundColor: item.color}}>
-                             <BsCheck className={`ml-2 text-2xl text-white ${item.colo === true ? 'block' : 'hidden'}`} />
+                          <button type='button' className='h-10 w-10 rounded-full cursor-pointer' style={{ backgroundColor: item.color}} onClick={() => {} }>
+                             <BsCheck className={`ml-2 text-2xl text-white ${item === false ? 'block' : 'hidden'}`} />
                           </button>
                       </div>
                   </TooltipComponent> 
@@ -78,7 +82,7 @@ const  ThemeSettings = () => {
               </div>
             </div>
 
-        </div> 
+        </div>  
     </div>
   );
 };
