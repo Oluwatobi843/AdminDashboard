@@ -3,8 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
-import { LineChart } from "./components";
+import { Navbar, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerce,
   Orders,
@@ -15,6 +14,7 @@ import {
   Customers,
   Kanban,
   Area,
+  Line,
   Bar,
   Pie,
   Financial,
@@ -84,7 +84,7 @@ const App = () => {
 
                 {/* Charts Routes */}
 
-                <Route path="/line-chart" element={<LineChart />} />
+                <Route path="/line" element={<Line />} />
                 <Route path="/area" element={<Area />} />
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />

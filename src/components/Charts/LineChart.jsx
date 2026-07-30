@@ -1,11 +1,15 @@
 import React from 'react'; 
+import { ChartComponent, SeriesCollectionDirective, SeriesDirective,LineSeries, Inject, DateTime, Legend, Tooltip } from '@syncfusion/ej2-react-charts';
+import { lineCustomSeries, LinePrimaryYAxis, LinePrimaryXAxis } from '../../data/dummy'
 
 const LineChart = () => {
   return (
-    <div>
-      <h2>Line Chart</h2>
-      <p>This is a simple line chart component.</p>
-    </div>
+    <ChartComponent id='line-chart' height='420px' primaryXAxis={LinePrimaryXAxis} primaryYAxis={LinePrimaryYAxis} chartArea={{ border: {width: 0}}} tooltip={enable: true}/>
+      <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
+      <SeriesCollectionDirective>
+        {lineCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
+      </SeriesCollectionDirective>
+    </ChartComponent>
   );
 };
 

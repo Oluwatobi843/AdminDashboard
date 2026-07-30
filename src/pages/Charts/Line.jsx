@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Header,LineChart } from "../../components";
 
-const LineChart = () => {
-  return (
-    <div>
-      <h2>Line Chart</h2>
-      <p>This is a simple line chart component.</p>
-    </div>
-  );
-};
+const Line = () => {
+    return(
+        <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+            <Header category="Chart" title="Inflation Rate" />
 
-export default LineChart;
+            <div className="w-full">
+                <LineChart />
+            </div>
+        </div>
+    )
+}
+
+export default Line
